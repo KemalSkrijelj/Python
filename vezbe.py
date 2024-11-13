@@ -220,7 +220,7 @@ import math
 # b = float(input("Unesi drugi broj: \n"))
 # c = float(input("Unesi treci broj: \n"))
 
-# d = b*b - 4*a*c
+# d = b**2 - 4  *a*c
 
 # if d >= 0:
 #   print("Realna resenja")
@@ -264,12 +264,120 @@ import math
 #   rezultat = unetiBr << 1
 #   print("Mnozenje=" + str(rezultat))
 ################# 29
-unetiBr = int(input("Unesi broj: \n"))
-a = 0
-b = 1
+# unetiBr = int(input("Unesi broj: \n"))
+# a = 0
+# b = 1
 
-for _ in range(unetiBr):
-  pomocna = a + b
-  a = b
-  b = pomocna
-  print(f"Prvih {unetiBr} članova Fibonacijevog niza: {a, b, a+ b}")
+# for _ in range(unetiBr):
+#   pomocna = a + b
+#   a = b
+#   b = pomocna
+#   print(f"Prvih {unetiBr} članova Fibonacijevog niza: {a, b, a+ b}")
+# ################## 30
+# unetiBr = int(input("Unesi neki broj: \n"))
+# a,b= 0,1
+# pomocna = 0
+# while b < unetiBr:
+#   pomocna = a
+#   a = b
+#   b = a + pomocna #1 
+
+# if b == unetiBr:
+#   print("Broj je u fibonacijevom nizu")
+# else:
+#   print("Broj nije u fibonacijevom nizu")
+# ################## 31
+# nekiBroj = int(input("Unesi neki broj: \n"))
+# zbirDelilaca = 0
+
+# for i in range(1, nekiBroj):
+#   if nekiBroj % i == 0:
+#     zbirDelilaca = zbirDelilaca+i
+
+# if zbirDelilaca == nekiBroj:
+#   print("Broj je savrsen")
+# else:
+#   print("Broj nije savrsen")
+#############################
+# brojevi = [1,2,3,4,4,5,6,6,7]
+# sumaCifara = 0
+
+# for i in brojevi:
+#   sumaCifara = sumaCifara + i
+
+# print("Suma cifara je:" , sumaCifara)
+
+# rec = "Programiranje"
+# brojac = 0
+
+# for slova in rec:
+#   if slova == "r":
+#     brojac = brojac+1
+
+# print("Broj slova r je :" , brojac)
+############################# 32
+# broj = int(input("Unesi neki broj: \n"))
+# prost = True
+# for i in range(2, broj // 2 + 1 ):
+#   if broj % i == 0:
+#     prost = False
+#     break
+
+# if prost:
+#   print("Broj je prost")
+# else:
+#   print("Broj nije prost")
+############################# 35
+# broj1 = int(input("Unesi prvi broj: \n"))
+# broj2 = int(input("Unesi drugi broj: \n"))
+# broj3 = int(input("Unesi treci broj: \n"))
+
+# srednjaVrednost = (broj1 + broj2 + broj3) / 3
+# brojevi = [broj1, broj2, broj3]
+# brojevi.sort()
+# medijana = brojevi[1]
+
+# if srednjaVrednost == medijana:
+#   print("Srednja vrednost je jednaka medijani")
+# else:
+#   print("Srednja vrednost nije jednaka medijani")
+####################################
+# n = int(input("Unesi neki broj: \n"))
+
+# while n >= 10:
+#   sumNumbers = 0
+#   while n > 0:
+#     zadnjaCifra = n % 10
+#     sumNumbers += zadnjaCifra
+#     n = n // 10
+#   n = sumNumbers
+
+# print(f"Digitalni koren je {n} ")
+#################################
+# prvi = int(input("Prvi broj: \n"))
+# drugi = int(input("Drugi broj: \n"))
+
+# zlatniRez = 1.618
+
+# manji = min(prvi ,drugi)
+# veci = max(prvi ,drugi)
+
+# odnos = veci / manji
+# tolerancija = 0.01
+
+# if abs(odnos - zlatniRez) < tolerancija:
+#   print("U zlatnom rezu")
+# else:
+#   print("Nisu u zlatnom rezu")
+#################################
+prvi = int(input("Prvi broj: \n"))
+drugi = int(input("Drugi broj: \n"))
+
+c = 1
+while drugi**c <= prvi :
+  if drugi ** c == prvi:
+    print("Prvi broj je stepen drugog broja")
+    break
+  c = c+1
+else:
+   print("Prvi broj nije stepen drugog broja")
