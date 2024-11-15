@@ -370,14 +370,135 @@ import math
 # else:
 #   print("Nisu u zlatnom rezu")
 #################################
-prvi = int(input("Prvi broj: \n"))
-drugi = int(input("Drugi broj: \n"))
+# prvi = int(input("Prvi broj: \n"))
+# drugi = int(input("Drugi broj: \n"))
 
-c = 1
-while drugi**c <= prvi :
-  if drugi ** c == prvi:
-    print("Prvi broj je stepen drugog broja")
-    break
-  c = c+1
+# c = 1
+# while drugi**c <= prvi :
+#   if drugi ** c == prvi:
+#     print("Prvi broj je stepen drugog broja")
+#     break
+#   c = c+1
+# else:
+#    print("Prvi broj nije stepen drugog broja")
+#################################
+# broj = int(input("Unesi broj: \n"))
+# zbir = 0
+# for i in range(1, broj):
+#   if broj % i == 0:
+#     zbir += i
+# if zbir == broj:
+#   print("Savrsen broj")
+# else:
+#   print("Broj nije savrsen")
+############################
+# broj = int(input("Unesi broj: \n"))
+# uStr = str(broj)
+# print("Uneli ste broj: \n" + uStr)
+# obrnutiBroj = ''.join(reversed(uStr))
+# print("Obrnuti broj je: " + obrnutiBroj)
+############################
+# n = int(input("Unesite ceo broj n za izračunavanje faktorijela: "))
+# fakt = 1
+# for i in range(1, n+1):
+#   fakt *= i
+
+# print(f"Faktorijel broj {n} je {fakt}") 
+############################
+# a = input('Prva vrednost = ')
+# b = input('Druga vrednost = ')
+# print('pre razmene a =', a, 'b =', b)
+# pomocna = a
+# a = b
+# b = pomocna
+# print('posle razmene a =', a, 'b =', b)
+############################
+# broj = int(input("Unesi broj: \n"))
+# prost = True
+# for i in range(1, broj + 1):
+#   if broj % i == 0:
+#     prost = False
+#     break
+# if prost:
+#   print("Broj je prost")
+# else:
+#   print("Broj nije prost")
+############################
+# n = int(input('Prva vrednost = '))
+# a = 0
+# b = 1
+# pomocna = 0
+# while b < n:
+#   pomocna = a
+#   a = b
+#   b = a + pomocna
+# if b == n:
+#   print("Broj je u fibonacijevom nizu")
+# else:
+#   print("Broj nije u fibonacijevom nizu")
+# ##############################
+# a = int(input("Unesi prvu vrednost: \n"))
+# b = int(input("Unesi drugu vrednost: \n"))
+# c = int(input("Unesi trecu vrednost: \n"))
+# d = b**2 - 4*a*c
+
+# if d >= 0:
+#   print("Realna resenja")
+# else:
+#   print("Kompleksna resenja")
+# ##############################
+# while True:
+#   ime = str(input("Unesi ime: \n"))
+#   duzina = len(ime)
+
+#   if duzina > 15:
+#     print("Predugacko ime")
+#     break
+#   else:
+#     print(f"Vase ime je {ime}")
+  
+#   if ime[-1] == "a":
+#     print("Zensko ime")
+#     break
+#   else:
+#     print("Musko ime")
+#     break
+# ##############################
+# daniUMesecu = [31,28,31,30,31,30,31,30,31,30,31,30]
+# mesec = int(input("Unesi mesec kao broj: \n"))
+# dan = int(input("Unesi dan u mesecu: "))
+# if 1 <= mesec <= 12:
+#   if dan <= daniUMesecu[mesec - 1]:
+#     print("Validan datum")
+#   else:
+#     print("Datum nije validan")
+# ##############################
+# cifra = int(input("Unesi petocifreni broj: \n"))
+# toStr = str(cifra)
+# obrnutiBroj = ''.join(reversed(toStr))
+
+# if obrnutiBroj == toStr:
+#   print("Broj je palindrom")
+# else:
+#   print("Broj nije palindrom")
+################################
+# nekiBr = int(input("Unesi br: \n"))
+# kvadratBroja = nekiBr**2
+
+# if kvadratBroja % 2 == 0:
+#   print("Kvadrat unetog broja je paran")
+# else:
+#   print("Kvadrat unetog broja nije paran")
+################################
+n = int(input("Unesi neki broj: \n"))
+orginalanBroj = n
+zbirCifara = 0
+while n > 0:
+  cifra = n % 10
+  zbirCifara += cifra
+  n = n // 10
+
+if orginalanBroj % zbirCifara == 0:
+  print("Broj je deljiv zbirom svojih cifara")
 else:
-   print("Prvi broj nije stepen drugog broja")
+  print("Broj nije deljiv zbirom cifara")
