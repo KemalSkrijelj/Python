@@ -490,15 +490,156 @@ import math
 # else:
 #   print("Kvadrat unetog broja nije paran")
 ################################
-n = int(input("Unesi neki broj: \n"))
-orginalanBroj = n
-zbirCifara = 0
-while n > 0:
-  cifra = n % 10
-  zbirCifara += cifra
-  n = n // 10
+# n = int(input("Unesi neki broj: \n"))
+# orginalanBroj = n
+# zbirCifara = 0
+# while n > 0:
+#   cifra = n % 10
+#   zbirCifara += cifra
+#   n = n // 10
 
-if orginalanBroj % zbirCifara == 0:
-  print("Broj je deljiv zbirom svojih cifara")
-else:
-  print("Broj nije deljiv zbirom cifara")
+# if orginalanBroj % zbirCifara == 0: 
+#   print("Broj je deljiv zbirom svojih cifara")
+# else:
+#   print("Broj nije deljiv zbirom cifara")
+################################
+# a = int(input("Unesi prvu vrednost: \n"))
+# b = int(input("Unesi drugu vrednost: \n"))
+# c = int(input("Unesi trecu vrednost: \n"))
+# srednjaVrednost = (a+b+c)/3
+# brojevi = [a,b,c]
+# brojevi.sort()
+# medijana = brojevi[1]
+
+# if srednjaVrednost == medijana:
+#   print("Srednja vrednost je jednaka medijani")
+# else:
+#   print("Srednja vrednost je jednaka medijani")
+################################
+# n = int(input("Unesi neki broj: \n"))
+# zbir_delilaca = 0
+
+# for i in range(1, n):
+#   if n % i == 0:
+#     zbir_delilaca +=i
+
+# if zbir_delilaca == n:
+#   print("Savrsen broj")
+# else:
+#   print("Broj nije savrsen")
+################################
+# n = int(input("Unesi neki broj: \n"))
+# prost = True
+
+# for i in range(2, n):
+#   if n % i == 0:
+#     prost = False
+#     break
+
+# if prost:
+#   print("Broj je prost")
+# else:
+#   print("Broj nije prost")
+################################
+# n = int(input("Unesi neki broj: \n"))
+# a, b = 0,1
+# pomocna = 0
+# while b < n:
+#   pomocna = a
+#   a = b
+#   b = pomocna + a
+# if b == n:
+#   print("Broj je deo fib. niza")
+# else:
+#   print("Broj nije deo fib. niza")
+################################
+# n = int(input("Unesi neki broj n: \n"))
+# a = 0
+# b = 1
+
+# for _ in range(n):
+#   pomocna = a + b
+#   a = b
+#   b = pomocna
+#   print(f"Prvi {n} clanovi Fib. niza su: {a,b , a+b}")
+# ################################
+# broj = int(input("Unesi broj: \n"))
+# operacija = str(input("Unesi sta zelis mnozenje ili deljenje: \n"))
+
+# if operacija == "mnozenje":
+#   rezultat = broj << 1
+#   print(rezultat)
+# else:
+#   rezultat = broj >> 3
+#   print(rezultat)
+# ################################
+# godina = int(input("Unesi godinu unutar dekade(2020-2029): \n"))
+
+# if 2020 <= godina <= 2029:
+#   print("Unutar dekade.")
+# else:
+#   print("Izvan dekade")
+# ################################
+# prviUgao = int(input("Unesi prvi ugao: \n"))
+# drugiUgao = int(input("Unesi drugi ugao: \n"))
+# treciUgao = int(input("Unesi treci ugao: \n"))
+# cetvrtiUgao = int(input("Unesi cetvrti ugao: \n"))
+
+# zbirUglova = prviUgao + drugiUgao + treciUgao + cetvrtiUgao
+
+# if zbirUglova == 360 and prviUgao == 90 and drugiUgao == 90 and treciUgao == 90 and cetvrtiUgao == 90:
+#   print("Validan pravougaonik")
+# else:
+#   print("Nije validan pravougaonik")
+# ################################
+# prviBroj = int(input("Unesi prvi broj: \n"))
+# drugiBroj = int(input("Unesi drugi broj: \n"))
+# stepen = 1
+
+# while drugiBroj**stepen < prviBroj:
+#   stepen += 1
+
+# if prviBroj == drugiBroj**prviBroj:
+#   print("Prvi broj je stepen drugog broja")
+# else:
+#   print("Prvi broj nije stepen drugog broja")
+# ################################
+# prviBroj = int(input("Unesi prvi broj: \n"))
+# drugiBroj = int(input("Unesi drugi broj: \n"))
+# zlatniRez = 1.618
+# manji = min(prviBroj ,drugiBroj)
+# veci = max(prviBroj ,drugiBroj)
+
+# odnos = veci / manji
+# tolerancija = 0.01
+# if abs(odnos - zlatniRez) < tolerancija:
+#   print("Brojevi su u zlatnom rezu")
+# else:
+#   print("Brojevi nisu u zlatnom rezu")
+# ################################
+# broj = int(input("Unesi trocifren broj: \n"))
+# prvaCifra = broj // 100
+# drugaCifra = ( broj // 10) % 10
+# trecaCifra = broj % 10
+
+# if prvaCifra**3 + drugaCifra**3 + trecaCifra**3 == broj:
+#   print("Armnstrongov broj")
+# else:
+#   print("Nije Arm. broj")
+# ################################
+# x = int(input("Unesi x: \n"))
+# n = int(input("Unesi n: \n"))
+
+# for a in range(x,n):
+#   for j in range(x,n):
+#     print(a,j)
+# ################################
+n = int(input("Unesi pozitivan ceo broj: \n"))
+while n >= 10:
+  zbir = 0
+  while 0 < n:
+    zadnjaCifra = n % 10
+    zbir += zadnjaCifra
+    n = n // 10
+  n = zbir
+print(f"Digitalni koren broja je {n} ")
