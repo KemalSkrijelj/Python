@@ -634,12 +634,87 @@ import math
 #   for j in range(x,n):
 #     print(a,j)
 # ################################
-n = int(input("Unesi pozitivan ceo broj: \n"))
-while n >= 10:
-  zbir = 0
-  while 0 < n:
-    zadnjaCifra = n % 10
-    zbir += zadnjaCifra
-    n = n // 10
-  n = zbir
-print(f"Digitalni koren broja je {n} ")
+# n = int(input("Unesi pozitivan ceo broj: \n"))
+# while n >= 10:
+#   zbir = 0
+#   while 0 < n:
+#     zadnjaCifra = n % 10
+#     zbir += zadnjaCifra
+#     n = n // 10
+#   n = zbir
+# print(f"Digitalni koren broja je {n} ")
+# ################################
+# dani_u_mesecima = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+# mesec = int(input("Unesi mesec: (brojevima) \n"))
+# dan = int(input("Unesi dan: (brojevima) \n"))
+
+# if 1<= mesec <= 12:
+#   if dan >= 1 and dan <= dani_u_mesecima[mesec-1]:
+#     print("Validan datum")
+#   else:
+#     print("Nevalidan datum")
+# else:
+#   print("Mesec mora biti u opsegu od 1 do 12!")
+# ################################
+# nekiBroj = int(input("Unesi petocifreni broj: \n"))
+# toStr = str(nekiBroj)
+# obrnuti = ''.join(reversed(toStr))
+
+# if toStr == obrnuti:
+#   print("Broj je palindrom")
+# else:
+#   print("Broj nije palindrom")
+# ################################
+# prviBroj = int(input("Unesi prvi broj: \n"))
+# drugiBroj = int(input("Unesi drugi broj: \n"))
+# treciBroj = int(input("Unesi treci broj: \n"))
+
+# if  drugiBroj - prviBroj == treciBroj - drugiBroj:
+#   print("Aritmeticki niz")
+# else:
+#   print("Nije aritmeticki niz")
+# ################################
+# broj = int(input("Unesi pozitivan ceo broj: \n"))
+
+# if broj >= 10:
+#   zbir = 0
+#   while broj > 0:
+#     cifra = broj % 10
+#     zbir += cifra
+#     broj = broj // 10
+#   broj = zbir
+# print(f"Digitalni broj je {broj}")
+# ################################
+# broj = int(input("Unesi pozitivan ceo broj: \n"))
+# zbir_delilaca = 0
+
+# for i in range(1,broj):
+#   if broj % i == 0:
+#     zbir_delilaca +=i
+
+# if zbir_delilaca == broj:
+#   print("Broj je savrsen")
+# else:
+#   print("Broj nije savrsen")
+# ################################
+# broj = int(input("Unesi broj: \n"))
+# a,b = 0,1
+# pomocna = 0
+# while b < broj:
+#   pomocna = a
+#   a = b
+#   b = a + pomocna
+
+# if b == broj:
+#   print("Broj je deo fib. niza")
+# else:
+#   print("Broj nije deo fib. niza")
+# ################################
+n = int(input("Unesi broj: \n"))
+a,b = 0,1
+
+for _ in range(n):
+  pomocna = a + b
+  a = b
+  b = pomocna
+  print(f"Prvih {n} clova Fib. niza su : {a,b, a+b} ")
