@@ -710,11 +710,12 @@ import math
 # else:
 #   print("Broj nije deo fib. niza")
 # ################################
-n = int(input("Unesi broj: \n"))
-a,b = 0,1
+# n = int(input("Unesi broj: \n"))
+# a,b = 0,1
 
-for _ in range(n):
-  pomocna = a + b
-  a = b
-  b = pomocna
-  print(f"Prvih {n} clova Fib. niza su : {a,b, a+b} ")
+# for _ in range(n):
+#   pomocna = a + b
+#   a = b
+#   b = pomocna
+#   print(f"Prvih {n} clova Fib. niza su : {a,b, a+b} ")
+# ################################
