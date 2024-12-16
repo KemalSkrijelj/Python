@@ -719,3 +719,72 @@ import math
 #   b = pomocna
 #   print(f"Prvih {n} clova Fib. niza su : {a,b, a+b} ")
 # ################################
+# matrica = [[1,2,3], [2,3,4], [1,2,4]]
+
+# for red in matrica:
+#   for element in red:
+#       print(element)
+
+# torka = (1,2,"tekst", 3, False)
+# print(*torka)
+# ################################
+# n = int(input("Unesi n: "))
+# m = int(input("Unesi m: "))
+# matrica = []
+# for i in range(n):
+#   red = []
+#   for j in range(m):
+#     red.append((float(input(f"Element matrice ({i+1}, {j+1}): "))))
+#   matrica.append(red)
+
+# for red in matrica:
+#    print(red)
+# ################################
+# def f1(l1,l2):
+#   s1,s2=set(l1),set(l2)
+#   return s1.intersection(s2)
+
+# def f2(**liste):
+#   sets=[set(l) for l in liste]
+#   return sets.intersection(*sets)
+
+# def f3(*liste):
+#   sets=[set(l) for l in liste]
+#   razlika =[]
+#   for i in (len(sets)):
+#     set[0], set[i] = set[i], set[i]
+#     razlika.append(set.difference(*sets))
+#   return set.union(*razlika)
+
+# l1,l2,l3 = [8,5,3,6],[8,9,0,7,3],[0,3,5,6,2]
+# s1,s2,s3 = f1(l1,l2), f2(l1,l2,l3), f3(l1,l2,l3)
+
+# print("a:{}\n b:{}\n c:{}".format(f1,f2,f3))
+# ################################
+# def haterogram(recenica):
+#   slova = [slovo for slovo in recenica if slovo.isalpha()]
+#   return len(set(recenica)) == len(slova)
+
+# recenicaUneta = input("Unesi recenicu: \n")
+
+# if(haterogram(recenicaUneta)):
+#   print(f"{recenicaUneta} je heterogram")
+# else:
+#   print(f"{recenicaUneta} nije heterogram")
+# ################################
+lista = [1,3,"text", 7]
+
+recnik = {
+  "kljuc1": 1,
+  "element": 3,
+  "txt": "text",
+  "kljuc1": 7
+}
+
+print(recnik)
+print(recnik.keys())
+print(recnik.values())
+print(recnik.items())
+
+for i in recnik:
+  print(i, recnik[i])
