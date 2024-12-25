@@ -1,4 +1,7 @@
 import math
+import re
+
+import re._compiler
 # brojGodina = int(input("Unesi broj godina radnog staza: \n"))
 
 # if ( brojGodina > 5 ):
@@ -772,19 +775,58 @@ import math
 # else:
 #   print(f"{recenicaUneta} nije heterogram")
 # ################################
-lista = [1,3,"text", 7]
+# lista = [1,3,"text", 7]
 
-recnik = {
-  "kljuc1": 1,
-  "element": 3,
-  "txt": "text",
-  "kljuc1": 7
-}
+# recnik = {
+#   "kljuc1": 1,
+#   "element": 3,
+#   "txt": "text",
+#   "kljuc1": 7
+# }
 
-print(recnik)
-print(recnik.keys())
-print(recnik.values())
-print(recnik.items())
+# print(recnik)
+# print(recnik.keys())
+# print(recnik.values())
+# print(recnik.items())
 
-for i in recnik:
-  print(i, recnik[i])
+# for i in recnik:
+#   print(i, recnik[i])
+# ################################
+# tekst = r"Studenti \n softverskog \t inzenjerstva"
+# print(tekst)
+# ################################
+
+# tekst1=re.compile(r"rec")
+# tekst2=re.compile(r"od")
+
+# string = "Reci u recenici"
+
+# print(tekst1.search(string))
+
+# for trazeni in tekst1.finditer(string):
+#   print(trazeni)
+# ################################
+# def pronadji_godine(filename):
+#   with open(filename) as file:
+#     teskt=file.read()
+#   pattern = re.compile(r"\d\d\d\d")
+#   godine=pattern.findall(teskt)
+#   godine.sort(reverse=True)
+#   return godine
+
+# datoteka = input("Unesi ime datoteke: \n")
+# godine=pronadji_godine(datoteka)
+# print("Godine izbora saradnika u nastavi:",",".join(godine))
+# ################################
+
+def urediSadrzaj(filename):
+  with open(filename, "r+",encoding="UTF-8") as file:
+    tekst=file.read()
+    pattern = re.compile(r"(\d{1,4})/\d{2}(\d{2}),\s+(\w+)\s+(\w+)")
+    noviTekst =pattern.sub(r"\2/\1,\4 \3",tekst)
+    file.seek(0)
+    file.truncate()
+    file.write(noviTekst)
+
+datoteka = input("Unesi naziv datotekeL: ")
+urediSadrzaj(datoteka)
