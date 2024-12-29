@@ -381,32 +381,105 @@ from collections import Counter
 #     lista.remove(el)
 #     break
 ###########################################
-def prosekTemp(s, days):
-  return s / days
+# def prosekTemp(s, days):
+#   return s / days
 
-lista = []
-days = 7
-s = 0
-for i in range(days):
-  element = int(input(f"Unesi temperaturu za dan-{i+1}: "))
-  lista.append(element)
-  s+=element
+# lista = []
+# days = 7
+# s = 0
+# for i in range(days):
+#   element = int(input(f"Unesi temperaturu za dan-{i+1}: "))
+#   lista.append(element)
+#   s+=element
 
-print(lista)
+# print(lista)
 
-maxTemp = lista[0]
-minTemp = lista[0]
-pozicijaMin = 0
-pozicijaMax = 0
-for i in range(1, len(lista)):
-  if lista[i] > maxTemp:
-    maxTemp = lista[i]
-    pozicijaMax = i
-  if lista[i] < minTemp:
-    minTemp = lista[i]
-    pozicijaMin = i
+# maxTemp = lista[0]
+# minTemp = lista[0]
+# pozicijaMin = 0
+# pozicijaMax = 0
+# for i in range(1, len(lista)):
+#   if lista[i] > maxTemp:
+#     maxTemp = lista[i]
+#     pozicijaMax = i
+#   if lista[i] < minTemp:
+#     minTemp = lista[i]
+#     pozicijaMin = i
 
-prosecnaTemperatura = prosekTemp(s,days)
-print(f"Max temp je {maxTemp} ,dan: {pozicijaMax + 1}")
-print(f"Min temp je {minTemp} ,dan: {pozicijaMin + 1}")
-print(f"Prosecna temperatura je {prosecnaTemperatura}")
+# prosecnaTemperatura = prosekTemp(s,days)
+# print(f"Max temp je {maxTemp} ,dan: {pozicijaMax + 1}")
+# print(f"Min temp je {minTemp} ,dan: {pozicijaMin + 1}")
+# print(f"Prosecna temperatura je {prosecnaTemperatura}")
+###########################################
+# def samoglasnci(lista):
+#   samoglasnik = "aeiouAEIOU"
+#   return [rec for rec in lista if all(char in samoglasnik for char in rec)]
+
+# def slicne(lista):
+#   reciIste = []
+#   for i in range(len(lista)):
+#    if lista[i][0] == lista[i][-1]:
+#     reciIste.append(lista[i])
+#   return reciIste
+# def sortirane(lista):
+#   lista.sort(key = len)
+#   return lista
+
+# lista = []
+# n = int(input("Unesi n: "))
+# for i in range(n):
+#   element = input("Unesi rec: ")
+#   lista.append(element)
+
+# reciSamoglasnici = samoglasnci(lista)
+# isteReci = slicne(lista)
+# sortirana = sortirane(lista)
+
+# print(f"Reci sa samoglasnicima: {reciSamoglasnici}")
+# print(f"Reci sa istim slovom na pocetak i na kraj: {isteReci}")
+# print(f"Sortiran niz po duzini: {sortirana}")
+###########################################
+# def ponavljanjeReci(lista):
+#   brojPonavljanja = {}
+
+#   for rec in lista:
+#     if rec in brojPonavljanja:
+#       brojPonavljanja[rec] += 1
+#     else:
+#       brojPonavljanja[rec] = 1
+
+#     reciPonavljanje = {}
+#     for rec, broj in brojPonavljanja.items():
+#       if broj > 1:
+#         reciPonavljanje[rec] = broj
+
+#   return reciPonavljanje
+
+# def najduzaRec(lista):
+#   najduza = lista[0]
+#   for rec in lista:
+#     if len(rec) > len(najduza):
+#       najduza = rec
+#   return najduza
+
+# def palindrom(lista):
+#   palindromi = []
+#   for rec in lista:
+#     if rec == rec[::-1]:
+#       palindromi.append(rec)
+#   return palindromi
+
+# lista = []
+# n = int(input("Unesi n: "))
+# for i in range(n):
+#   element = input("Unesi rec: ")
+#   lista.append(element)
+
+# palindromi = palindrom(lista)
+# najduza = najduzaRec(lista)
+# ponavljanje = ponavljanjeReci(lista)
+
+# print(f"Reci koje su palindromi: {palindromi}")
+# print(f"Najduza rec: {najduza}")
+# print(f"Reci koje su ponavljaju: {ponavljanje}")
+###########################################
