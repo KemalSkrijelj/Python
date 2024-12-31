@@ -1,4 +1,5 @@
 import math as math
+
 # nizA = []
 # nizB = []
 # nizC = []
@@ -253,36 +254,111 @@ import math as math
 
 #######################################
 
-n = int(input("Unesi n za kvadratnu jednacinu: "))
-while n <= 1 or n >= 10:
-  n = int(input("Unesi n u opsegu od 1 do 10: "))
+# n = int(input("Unesi n za kvadratnu jednacinu: "))
+# while n <= 1 or n >= 10:
+#   n = int(input("Unesi n u opsegu od 1 do 10: "))
+
+# matrica = []
+
+# print("Unesi matricu: ")
+# for i in range(n):
+#   red = []
+#   for j in range(n):
+#     element = int(input(f"Unesi element [{i}][{j}]: "))
+#     red.append(element)
+#   matrica.append(red)
+
+# print("Prikaz matrice: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end = " ")
+#   print()
+
+# print("Nova matrica: ")
+# for i in range(n):
+#   for j in range(i, n):
+#     matrica[i][j], matrica[j][i] = matrica[j][i], matrica[i][j]
+  
+# for i in range(n):
+#   matrica[i].reverse()
+
+# print("Prikaz matrice: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end = " ")
+#   print()
+
+#######################################
+
+# n = int(input("Unesi n za kvadratnu matricu: "))
+
+# matrica = []
+
+# print("Unesi matricu: ")
+# for i in range(n):
+#   red = []
+#   for j in range(n):
+#     element = int(input("Unesi el matrice: "))
+#     red.append(element)
+#   matrica.append(red)
+
+# print("Matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end= " ")
+#   print()
+
+# transponovana = []
+# print("Transponovana matrica: ")
+# for i in range(n):
+#   red = []
+#   for j in range(n):
+#     red.append(matrica[j][i])
+#   transponovana.append(red)
+
+# for red in transponovana:
+#   print(red)
+
+#######################################
+
+n = int(input("Unesi n: (vrsta)"))
+m = int(input("Unesi m: (kolona)"))
+
+while n <= 1:
+  n = int(input("Ponovo unesi n: (n>1) "))
+
+while m >= 10:
+  m = int(input("Ponovo unesi m: (m<10) "))
 
 matrica = []
-
 print("Unesi matricu: ")
 for i in range(n):
   red = []
-  for j in range(n):
-    element = int(input(f"Unesi element [{i}][{j}]: "))
+  for j in range(m):
+    element = int(input("Unesi el matrice: "))
     red.append(element)
   matrica.append(red)
 
-print("Prikaz matrice: ")
+print("Matrica: ")
 for red in matrica:
   for el in red:
-    print(el, end = " ")
+    print(el, end= " ")
   print()
 
-print("Nova matrica: ")
 for i in range(n):
-  for j in range(i, n):
-    matrica[i][j], matrica[j][i] = matrica[j][i], matrica[i][j]
+  minEl = matrica[i][0]
+  minKolona = 0
+  for j in range(m):
+    if matrica[i][j] < minEl:
+      minEl = matrica[i][j]
+      minKolona = j
   
-for i in range(n):
-  matrica[i].reverse()
+  isBiggest = True
 
-print("Prikaz matrice: ")
-for red in matrica:
-  for el in red:
-    print(el, end = " ")
-  print()
+  for k in range(n):
+    if matrica[k][minKolona] > minEl:
+      isBiggest = False
+      break
+
+  if isBiggest:
+    print(f"Sedlasta tacka: {minEl} na poziciji {i}, {minKolona}")
