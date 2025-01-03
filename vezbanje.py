@@ -321,44 +321,257 @@ import math as math
 
 #######################################
 
-n = int(input("Unesi n: (vrsta)"))
-m = int(input("Unesi m: (kolona)"))
+# n = int(input("Unesi n: (vrsta)"))
+# m = int(input("Unesi m: (kolona)"))
 
-while n <= 1:
-  n = int(input("Ponovo unesi n: (n>1) "))
+# while n <= 1:
+#   n = int(input("Ponovo unesi n: (n>1) "))
 
-while m >= 10:
-  m = int(input("Ponovo unesi m: (m<10) "))
+# while m >= 10:
+#   m = int(input("Ponovo unesi m: (m<10) "))
 
-matrica = []
-print("Unesi matricu: ")
-for i in range(n):
-  red = []
-  for j in range(m):
-    element = int(input("Unesi el matrice: "))
-    red.append(element)
-  matrica.append(red)
+# matrica = []
+# print("Unesi matricu: ")
+# for i in range(n):
+#   red = []
+#   for j in range(m):
+#     element = int(input("Unesi el matrice: "))
+#     red.append(element)
+#   matrica.append(red)
 
-print("Matrica: ")
-for red in matrica:
-  for el in red:
-    print(el, end= " ")
-  print()
+# print("Matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end= " ")
+#   print()
 
-for i in range(n):
-  minEl = matrica[i][0]
-  minKolona = 0
-  for j in range(m):
-    if matrica[i][j] < minEl:
-      minEl = matrica[i][j]
-      minKolona = j
+# for i in range(n):
+#   minEl = matrica[i][0]
+#   minKolona = 0
+#   for j in range(m):
+#     if matrica[i][j] < minEl:
+#       minEl = matrica[i][j]
+#       minKolona = j
   
-  isBiggest = True
+#   isBiggest = True
 
-  for k in range(n):
-    if matrica[k][minKolona] > minEl:
-      isBiggest = False
+#   for k in range(n):
+#     if matrica[k][minKolona] > minEl:
+#       isBiggest = False
+#       break
+
+#   if isBiggest:
+#     print(f"Sedlasta tacka: {minEl} na poziciji {i}, {minKolona}")
+
+#######################################
+# def prosekTorke(torke):
+#    proseci = []
+#    for torka in torke:
+#       s = sum(torka)
+#       proseci.append(s / 3)
+#    return proseci
+         
+# torke = []
+# n = int(input("Unesi broj torki: "))
+
+# for i in range(n):
+#     while True:
+#       el = input("Unesi element torke, odvojene razmakom: ").split()
+#       if len(el) == 3:
+#          torka = tuple(map(float, el))
+#          torke.append(torka)
+#          break
+#       else:
+#         print("Torka mora imati tacno 3 elementa.")
+
+# prosekTorki = prosekTorke(torke)
+# sortiraneTorkePoProseku = sorted(torke, key=lambda t : sum(t) / len(t), )
+# print(torke)
+# print(f"Prosek svake torke {prosekTorki}")
+# print(f"Sortirane torke {sortiraneTorkePoProseku}")
+
+#######################################
+
+# def provera(torke):
+#   najmanjaRazlika = float('inf')
+#   najboljaTorka = None
+#   for torka in torke:
+#     minEl = min(torka)
+#     maxEl = max(torka)
+#     razlika = maxEl - minEl
+#     if razlika < najmanjaRazlika:
+#       najmanjaRazlika = razlika
+#       najboljaTorka = torka
+#   return najboljaTorka
+  
+# torke = []
+# n = int(input("Unesi broj torki: "))
+
+# for i in range(n):
+#   while True:
+#     element = input("Unesi elemente torke, razdovojene razmakom: ").split()
+#     if len(element) == 3:
+#       torka = tuple(map(int, element))
+#       torke.append(torka)
+#       break
+#     else:
+#       print("Torka mora imati 3 elementa!")
+
+# najmanjaTorka = provera(torke)
+# print(torke)
+# if najmanjaTorka:
+#   print(f"Torka sa najmanjom razlikom izmedju najveceg i najmanjeg elementa: {najmanjaTorka}")
+# else:
+#   print("Greska!")
+
+
+#######################################
+
+# matrica = []
+# n = int(input("Unesi vrstu: "))
+# m = int(input("Unesi kolonu: "))
+
+# najveciEl = float('-inf')
+# najmanjiEl = float('inf')
+
+# vrstaNajveci = -1
+# vrstaNajmanji = -1
+
+# print("Unesi matricu: ")
+# for i in range(n):
+#   red = []
+#   for j in range(m):
+#     el = int(input(f"Unesi element[{i}][{j}]: "))
+#     red.append(el)
+#   matrica.append(red)
+
+# print("Matrica: ")
+# for red in matrica:
+#   for element in red:
+#     print(element, end= " ")
+#   print()
+
+# for i, vrsta in enumerate(matrica):
+#   maxEl = max(vrsta)  
+#   minEl = min(vrsta)
+
+#   if maxEl > najveciEl:
+#     najveciEl = maxEl
+#     vrstaNajveci = i
+
+#   if minEl < najmanjiEl:
+#     najmanjiEl = minEl
+#     vrstaNajmanji = i 
+
+# print(f"Najveci el {najveciEl} u vrsti {vrstaNajveci+1}")
+# print(f"Najmanji el {najmanjiEl} u vrsti {vrstaNajmanji+1}")
+# matrica[vrstaNajmanji], matrica[vrstaNajveci] = matrica[vrstaNajveci], matrica[vrstaNajmanji]
+
+# print("Nova matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end=" ")
+#   print()
+
+#######################################
+
+# n = int(input("Unesi n: "))
+# matrica = []
+# maxEl = float('-inf')
+
+# for i in range(n):
+#   red = []
+#   for j in range(n):
+#     el = int(input(f"Unesi element[{i}][{j}]: "))
+#     red.append(el)
+#   matrica.append(red)
+
+# print("Matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end= " ")
+#   print()
+
+# for i in range(n):
+#   s = 0
+#   for j in range(n):
+#     if j == n-1-i:
+#       s += matrica[i][j]
+
+# for i in range(n):
+#   for j in range(n):
+#     if j < n-1-i:
+#       if matrica[i][j] > maxEl:
+#         maxEl = matrica[i][j]
+    
+# print(f"Najveci element iznad sporedne dijagonale {maxEl}")
+
+#######################################
+
+# n = int(input("Unesi n: "))
+# matrica = []
+# while n > 10 or n < 1:
+#   n = int(input("N mora biti u opsegu 1<=n<=10: "))
+
+# for i in range(n):
+#   red = []
+#   for j in range(n):
+#     el = int(input(f"Unesi element matrice[{i}][{j}]: "))
+#     red.append(el)
+#   matrica.append(red)
+
+# print("Matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end=" ")
+#   print()
+# for red in matrica:
+#   for el in red:
+#     print(el, end=" ")
+#   print()
+
+# for i in range(n):
+#   for j in range(i,n):
+#     matrica[i][j],matrica[j][i] = matrica[j][i], matrica[i][j]
+
+# for i in range(n):
+#   matrica[i].reverse()
+
+# print("Okrenuta matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el, end=" ")
+#   print()
+
+######################################
+
+def parnost(torke):
+  parne = []
+  neparne = []
+
+  for torka in torke:
+    if sum(torka) % 2 == 0:
+      parne.append(torka)
+    else:
+      neparne.append(torka)
+
+  return parne, neparne
+
+torke = []
+n = int(input("Unesi broj torki: "))
+
+for i in range(n):
+  while True:
+    element = input("Unesi elemente torke odvojene razmakom: ").split()
+    if len(element) == 3:
+      torka = tuple(map(int, element))
+      torke.append(torka)
       break
+    else:
+      print("Torka mora imati tacno 3 elementa!")
 
-  if isBiggest:
-    print(f"Sedlasta tacka: {minEl} na poziciji {i}, {minKolona}")
+parneTorke, neparneTorke = parnost(torke)
+
+print(f"Sve torke zajendo {torke}")
+print(f"Parne torke: {parneTorke}")
+print(f"Neparne torke: {neparneTorke}")
