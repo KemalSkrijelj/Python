@@ -365,27 +365,79 @@ from collections import Counter
 # print(f"Ponovljene reci: {ponovljneReci}, unikatne: {unikatneReci}")
 
 ###########################
-def najcesceReci(recenice):
-  sveReci = []
+# def najcesceReci(recenice):
+#   sveReci = []
 
-  for recenica in recenice:
-    sveReci.append(recenica.split())
+#   for recenica in recenice:
+#     sveReci.append(recenica.split())
   
-  najcesce = set()
-  maxBroj = 0
-  for rec in sveReci:
-    broj = sveReci.count(rec)
-    if broj > maxBroj:
-      maxBroj = broj
-      najcesce.update(rec)
-  return najcesce
+#   najcesce = set()
+#   maxBroj = 0
+#   for rec in sveReci:
+#     broj = sveReci.count(rec)
+#     if broj > maxBroj:
+#       maxBroj = broj
+#       najcesce.update(rec)
+#   return najcesce
 
-n = int(input("Unesi broj rečenica: "))
-recenice = []
+# n = int(input("Unesi broj rečenica: "))
+# recenice = []
     
-for _ in range(n):
-  recenica = input("Unesi rečenicu: ")
-  recenice.append(recenica)
+# for _ in range(n):
+#   recenica = input("Unesi rečenicu: ")
+#   recenice.append(recenica)
 
-rezultat = najcesceReci(recenice)
-print(f"Najcesce reci: {rezultat}")
+# rezultat = najcesceReci(recenice)
+# print(f"Najcesce reci: {rezultat}")
+
+###########################
+# def isHeterogram(recenica):
+#   ponovljenaSlova = set()
+#   for char in recenica:
+#     if char.isalpha():
+#       if char in ponovljenaSlova:
+#         return False
+#       ponovljenaSlova.add(char)
+#   return True
+
+# recenica = input("Unesi recenicu: ")
+
+# if isHeterogram(recenica):
+#   print("Recenica je heterogram")
+# else:
+#   print("Recenica nije heterogram") 
+
+###########################
+
+# def isPangram(recenica):
+#   abeceda = set('abcdefghijklmnopqrstuvwxyz')
+#   recenicaNova = set()
+#   for char in recenica:
+#     if char in abeceda:
+#       recenicaNova.add(char.lower())
+#   return recenicaNova >= abeceda
+
+# recenica = input("Unesi recenicu: ")
+
+# if isPangram(recenica):
+#   print("Recenica je pangram. ")
+# else:
+#   print("Recenica nije pangram. ")
+
+###########################
+
+def isHeterogram(recenica):
+  ponovljenjaSlova = set()
+  for char in recenica:
+    if char.isalpha():
+      if char in ponovljenjaSlova:
+        return False
+      ponovljenjaSlova.add(char)
+  return True
+
+recenica = input("Unesi recenicu: ")
+
+if isHeterogram(recenica):
+  print("Recenica je heterogram")
+else:
+  print("Recenica nije heterogram")
