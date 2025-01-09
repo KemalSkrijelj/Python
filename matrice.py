@@ -174,17 +174,57 @@ import math as math
 
 #####################################
 
-n = int(input("Unesi broj vrsti matrice: "))
-m = int(input("Unesi broj kolona matrice: "))
-while n < 1 :
-  n = int(input("N mora biti veci od 1 "))
-while m>10:
-  m = int(input("M mora biti manji od 10: "))
+# n = int(input("Unesi broj vrsti matrice: "))
+# m = int(input("Unesi broj kolona matrice: "))
+# while n < 1 :
+#   n = int(input("N mora biti veci od 1 "))
+# while m>10:
+#   m = int(input("M mora biti manji od 10: "))
   
 
 
+# matrica = []
+# sumEl = 0
+# for i in range(n):
+#   red = []
+#   for j in range(m):
+#     el = int(input(f"Unesi el matrice[{i}][{j}]: "))
+#     red.append(el)
+#   matrica.append(red)
+
+# print("Matrica: ")
+# for red in matrica:
+#   for el in red:
+#     print(el,end=" ")
+#   print()
+
+# sedlasteTacke = []
+
+# for i in range(n):
+#   minEl = min(matrica[i])
+#   minIndex = matrica[i].index(minEl)
+
+#   isBiggest = True
+
+#   for j in range(m):
+#     if matrica[j][minIndex]> minEl:
+#       isBiggest = False
+#       break
+#   if isBiggest:
+#     sedlasteTacke.append((i,minIndex))
+
+# if sedlasteTacke:
+#   print("Sedlaste tacke: ")
+#   for tacka in sedlasteTacke:
+#     print(f"Red: {tacka[0]}, kolona: {tacka[1]}")
+# else:
+#   print("Nema sedlastih tacki")
+
+#####################################
+
+n = int(input("Unesi broj vrsti matrice: "))
+m = int(input("Unesi broj kolona matrice: "))
 matrica = []
-sumEl = 0
 for i in range(n):
   red = []
   for j in range(m):
@@ -195,27 +235,19 @@ for i in range(n):
 print("Matrica: ")
 for red in matrica:
   for el in red:
-    print(el,end=" ")
+    print(el, end=" ")
   print()
 
-sedlasteTacke = []
-
+sumaSporedne = 0
 for i in range(n):
-  minEl = min(matrica[i])
-  minIndex = matrica[i].index(minEl)
-
-  isBiggest = True
-
   for j in range(m):
-    if matrica[j][minIndex]> minEl:
-      isBiggest = False
-      break
-  if isBiggest:
-    sedlasteTacke.append((i,minIndex))
+    if j == n-1-i:
+      sumaSporedne += matrica[i][j]
+sumaIznadSporedne = 0
+for i in range(n):
+  for j in range(m):
+    if j < n-1-i:
+      sumaIznadSporedne += matrica[i][j]
 
-if sedlasteTacke:
-  print("Sedlaste tacke: ")
-  for tacka in sedlasteTacke:
-    print(f"Red: {tacka[0]}, kolona: {tacka[1]}")
-else:
-  print("Nema sedlastih tacki")
+print(f"Suma el. sporedne dijagonale: {sumaSporedne}")
+print(f"Suma el. iznad sporedne dijagonale: {sumaIznadSporedne}")
