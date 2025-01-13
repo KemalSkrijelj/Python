@@ -365,24 +365,95 @@ import random
 # print(f"Uneti hexBroj: {listaKaraktera} u decimalnom zapisu je: {decimalanBroj}")
 
 ##########################################
-while True:
-  nizX = []
-  nizY = []
-  n = int(input("Unesi duzinu nizova: "))
-  while n < 2:
-    n = int(input("Duzina mora biti veca od 2: "))
-  for i in range(n):
-    Xel = float(input("Unesi elemente nizaX: "))
-    Yel = float(input("Unesi elemente nizaY: "))
-    nizX.append(Xel)
-    nizY.append(Yel)
+
+# while True:
+#   nizX = []
+#   nizY = []
+#   n = int(input("Unesi duzinu nizova: "))
+#   while n < 2:
+#     n = int(input("Duzina mora biti veca od 2: "))
+#   for i in range(n):
+#     Xel = float(input("Unesi elemente nizaX: "))
+#     Yel = float(input("Unesi elemente nizaY: "))
+#     nizX.append(Xel)
+#     nizY.append(Yel)
   
-  duzina = 0
-  for i in range(1,n):
-    dx = nizX[i] - nizX[i-1]
-    dy = nizY[i] - nizY[i-1]
-    duzina += math.sqrt(dx** + dy**2)
-  print(f"Duzina izlomljene linije je: {duzina}")
-  ponovo= input("Da li zelis da uneses nove tacke: (da/ne) ")
-  if ponovo != "da":
-    break
+#   duzina = 0
+#   for i in range(1,n):
+#     dx = nizX[i] - nizX[i-1]
+#     dy = nizY[i] - nizY[i-1]
+#     duzina += math.sqrt(dx** + dy**2)
+#   print(f"Duzina izlomljene linije je: {duzina}")
+#   ponovo= input("Da li zelis da uneses nove tacke: (da/ne) ")
+#   if ponovo != "da":
+#     break
+
+##########################################
+
+# def samoSamoglasnici(listaReci):
+#   samoglasnici = "aeiouAEIOU"
+#   rezultat = []
+#   for rec in listaReci:
+#     isSamoglasnik = True
+#     for slovo in rec:
+#       if slovo not in samoglasnici:
+#         isSamoglasnik = False
+#         break
+#     if isSamoglasnik:
+#       rezultat.append(rec)
+#   return rezultat
+# def isteReci(listaReci):
+#   iste = []
+#   for i in range(len(listaReci)):
+#     if listaReci[i][0] == listaReci[i][-1]:
+#       iste.append(listaReci[i])
+#   return iste
+# def sortirana(listaReci):
+#   return sorted(listaReci, key=len, )
+
+# listaReci = []
+# n = int(input("Unesi broj reci: "))
+# for i in range(n):
+#   rec = input("Unesi rec: ")
+#   listaReci.append(rec)
+
+# sortiranaLista = sortirana(listaReci)
+# reciOdSamoglasnika = samoSamoglasnici(listaReci)
+# reci = isteReci(listaReci)
+
+# print(f"Sortirana lista: {sortiranaLista}")
+# print(f"Reci od samoglasnika: {reciOdSamoglasnika}")
+# print(f"Reci s istim slovom na pocetak i kraj: {reci}")
+
+##########################################
+def isPalindrom(listaReci):
+  palindromi = []
+  for rec in listaReci:
+    if rec == rec[::-1]:
+      palindromi.append(rec)
+  return palindromi
+def najduza(listaReci):
+  najduzaRec = listaReci[0]
+  for rec in listaReci:
+    if len(rec) > len(najduzaRec):
+      najduzaRec = rec
+  return najduzaRec
+def ponavljanjeReci(listaReci):
+  ponavljanja = {}
+  for rec in listaReci:
+    if rec not in ponavljanja:
+      ponavljanja[rec] = 1
+    else:
+      ponavljanja[rec] += 1
+  return ponavljanja
+
+reci = input("Unesi reci(odvojene razmakom): ")
+listaReci = reci.split()
+
+brojPonavljanja = ponavljanjeReci(listaReci)
+najduzaRec = najduza(listaReci)
+palindromi = isPalindrom(listaReci)
+
+print(f"Palindromi: {palindromi}")
+print(f"Najduza rec: {najduzaRec}")
+print(f"Ponvaljanje reci: {brojPonavljanja}")
